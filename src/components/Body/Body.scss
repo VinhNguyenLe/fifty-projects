@@ -1,0 +1,17 @@
+.Body {
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    gap: 12px;
+
+    &Link {
+        text-decoration: none;
+        display: block;
+        border: 1px solid black;
+        color: black;
+        padding-block: 40px;
+    }
+}
