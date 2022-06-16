@@ -8,7 +8,6 @@ function Content() {
                 <Route path="/" element={<Body />} />
                 {projectRoutes.map((route, index) => {
                     const Element = route.component;
-
                     return <Route path={route.path} key={index} element={<Element />} />;
                 })}
             </Routes>

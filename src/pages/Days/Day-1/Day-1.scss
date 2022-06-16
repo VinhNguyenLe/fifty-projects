@@ -1,4 +1,42 @@
 .Day1 {
     height: calc(100vh - 50px);
-    background-color: rgb(254, 117, 179);
+
+    &__wrap {
+        width: 90vw;
+        margin: 0 auto;
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            flex-grow: 0.5;
+            margin: 10px;
+            height: 80vh;
+            border-radius: 50px;
+            position: relative;
+            transition: all 1s ease-in-out;
+            cursor: pointer;
+
+            &.active {
+                flex-grow: 5;
+
+                & h3 {
+                    opacity: 1;
+                }
+            }
+
+            h3 {
+                $left: 32px;
+                color: #fff;
+                position: absolute;
+                left: $left;
+                bottom: $left;
+                font-size: 26px;
+                font-weight: 500;
+                opacity: 0;
+                transition: all 1s ease;
+            }
+        }
+    }
 }

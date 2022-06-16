@@ -4,9 +4,9 @@ import Day2 from '../pages/Days/Day-2';
 // export const homeRoute = [{ path: '/', component }];
 
 export const projectRoutes = [
-    { path: '/day-1/expanding-cards', component: Day1, name: 'Expanding Cards', day: 'Day 1' },
-    { path: '/day-2', component: Day2, name: 'Name', day: 'Day 2' },
-    { path: '/day-3', component: Day2, name: 'Name', day: 'Day 3' },
+    { path: '/day-1-expanding-cards', component: Day1, name: 'Expanding Cards', day: 'Day 1' },
+    { path: '/day-2-progress-steps', component: Day2, name: 'Progress Steps', day: 'Day 2' },
+    { path: '/day-3', component: Day2, name: 'Rotating Navigation Animation', day: 'Day 3' },
     { path: '/day-4', component: Day2, name: 'Name', day: 'Day 4' },
     { path: '/day-5', component: Day2, name: 'Name', day: 'Day 5' },
     { path: '/day-6', component: Day2, name: 'Name', day: 'Day 6' },
