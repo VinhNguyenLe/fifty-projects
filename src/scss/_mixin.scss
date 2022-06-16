@@ -1,0 +1,15 @@
+@mixin widthHeight($width: 100vw, $height: calc(100vh - 50px)) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin resetInput($outline: none, $border: none) {
+    outline: $outline;
+    border: $border;
+}
