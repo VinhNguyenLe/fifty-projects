@@ -18,8 +18,8 @@ or
 
 ### `yarn start`
 
-Open [http://localhost:3000/] to view it in your browser.
+Open http://localhost:3000/ to view it in your browser.
 
 ## Origin
 
-This project is referenced and rebuilt from the site [https://50projects50days.com/]
+This project is referenced and rebuilt from the site https://50projects50days.com/
