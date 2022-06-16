@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+// @for $i from 1 through 4 {
+//     .MobileView {
+//         & > div {
+//             animation-delay: 0;
+//             &: {
+//                 nth-child(#{$i});
+//             }
+//             > p {
+//                 animation-delay: $i * 0.025s;
+//             }
+//         }
+//     }
+// }
+
+.MobileView {
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    border: 4px solid #290c48;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & p {
+        font-family: 'Spartan', sans-serif;
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #290c48;
+        text-align: left;
+        width: 100%;
+    }
+
+    & img {
+        margin-bottom: 24px;
+        width: 140px;
+        height: 140px;
+        -webkit-animation: rotate 6s linear infinite;
+        -moz-animation: rotate 6s linear infinite;
+        animation: rotate 6s linear infinite;
+    }
+}
+
+@for $i from 2 to 7 {
+    .slideUp:nth-child(#{$i}) {
+        animation-delay: $i * 2s;
+    }
+}
+
+.slideUp {
+    animation-delay: 0;
+    animation: slide-up 1.2s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
