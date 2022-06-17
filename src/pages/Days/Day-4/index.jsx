@@ -1,24 +1,20 @@
 import { useState, useEffect, useContext } from 'react'
-import { TitleContext } from '../../../App'
-import { projectRoutes as project } from '../../../router'
 
 import './Day-4.scss'
 
-function Day4() {
+function Day4({ docTitle, depCom }) {
+    useEffect(() => {
+        document.title = `${docTitle}`
+        return () => {
+            document.title = `50 Projects In 50 Days Challenge`
+        }
+    }, [depCom])
+
     const [click, setClick] = useState(false)
 
     const handleClick = () => {
         setClick(!click)
     }
-
-    const titleDoc = useContext(TitleContext)
-
-    useEffect(() => {
-        document.title = `${project[3].day} - ${project[3].name}`
-        return () => {
-            document.title = titleDoc
-        }
-    }, [])
 
     return (
         <div className="Day4">

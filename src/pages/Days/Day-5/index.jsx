@@ -1,22 +1,18 @@
-import React from 'react'
-import { TitleContext } from '../../../App'
-import { projectRoutes as project } from '../../../router'
+import { useEffect, useState } from 'react'
 
 import './Day-5.scss'
 
-function Day5() {
-    const titleDoc = React.useContext(TitleContext)
-
-    React.useEffect(() => {
-        document.title = `${project[4].day} - ${project[4].name}`
+function Day5({ docTitle, depCom }) {
+    useEffect(() => {
+        document.title = `${docTitle}`
         return () => {
-            document.title = titleDoc
+            document.title = `50 Projects In 50 Days Challenge`
         }
-    }, [])
+    }, [depCom])
 
-    const [percent, setPercent] = React.useState(1)
+    const [percent, setPercent] = useState(1)
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setInterval(() => {
             setPercent((prev) => prev + 1)
         }, 40)

@@ -1,20 +1,16 @@
-import { useState, useEffect, useLayoutEffect, useContext } from 'react'
-import { TitleContext } from '../../../App'
-import { projectRoutes as project } from '../../../router'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import './Day-2.scss'
 
-function Day2() {
+function Day2({ docTitle, depCom }) {
+    useEffect(() => {
+        document.title = `${docTitle}`
+        return () => {
+            document.title = `50 Projects In 50 Days Challenge`
+        }
+    }, [depCom])
+
     const [progress, setProgress] = useState(0)
     const [width, setWidth] = useState(0)
-
-    const titleDoc = useContext(TitleContext)
-
-    useEffect(() => {
-        document.title = `${project[1].day} - ${project[1].name}`
-        return () => {
-            document.title = titleDoc
-        }
-    }, [])
 
     useLayoutEffect(() => {
         if (progress > 3) {

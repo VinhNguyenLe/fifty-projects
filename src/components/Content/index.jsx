@@ -1,14 +1,21 @@
 import { Route, Routes } from 'react-router-dom'
-import { projectRoutes } from '../../router'
+import { projectRoutes as project } from '../../router'
 import Body from '../Body'
+
 function Content() {
     return (
         <div className="Content">
             <Routes>
                 <Route path="/" element={<Body />} />
-                {projectRoutes.map((route, index) => {
+                {project.map((route, index) => {
                     const Element = route.component
-                    return <Route path={route.path} key={index} element={<Element />} />
+                    return (
+                        <Route
+                            path={route.path}
+                            key={index}
+                            element={<Element docTitle={`${route.day} - ${route.name}`} depCom={route.component} />}
+                        />
+                    )
                 })}
             </Routes>
         </div>

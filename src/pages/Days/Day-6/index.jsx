@@ -1,7 +1,14 @@
-import React from 'react'
+import { useEffect } from 'react'
 
-function index() {
-    return <div>index</div>
+function Day6({ docTitle, depCom }) {
+    useEffect(() => {
+        document.title = `${docTitle}`
+        return () => {
+            document.title = `50 Projects In 50 Days Challenge`
+        }
+    }, [depCom])
+
+    return <div></div>
 }
 
-export default index
+export default Day6

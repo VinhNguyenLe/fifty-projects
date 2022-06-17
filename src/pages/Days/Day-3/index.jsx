@@ -1,25 +1,22 @@
-import { useState, useEffect, useContext } from 'react'
-import { TitleContext } from '../../../App'
-import { projectRoutes as project } from '../../../router'
+import { useState, useEffect } from 'react'
 
 import styles from './Day-3.module.scss'
 
 const img =
     'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'
-function Day3() {
+
+function Day3({ docTitle, depCom }) {
+    useEffect(() => {
+        document.title = `${docTitle}`
+        return () => {
+            document.title = `50 Projects In 50 Days Challenge`
+        }
+    }, [depCom])
+
     const [rotate, setRotate] = useState(false)
 
     const isRotate = rotate && styles.rotate
     const isSlideIn = rotate && styles.slideIn
-
-    const titleDoc = useContext(TitleContext)
-
-    useEffect(() => {
-        document.title = `${project[2].day} - ${project[2].name}`
-        return () => {
-            document.title = titleDoc
-        }
-    }, [])
 
     return (
         <div className={styles.bg}>

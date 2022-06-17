@@ -31,15 +31,13 @@ const images = [
     },
 ]
 
-function Day1() {
-    const titleDoc = useContext(TitleContext)
-
+function Day1({ docTitle, depCom }) {
     useEffect(() => {
-        document.title = `${project[0].day} - ${project[0].name}`
+        document.title = `${docTitle}`
         return () => {
-            document.title = titleDoc
+            document.title = `50 Projects In 50 Days Challenge`
         }
-    }, [])
+    }, [depCom])
 
     const [active, setActive] = useState(images[0].id)
 
