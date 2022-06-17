@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-
-import './Day-1.scss';
+import { useState, useEffect, useContext } from 'react'
+import { TitleContext } from '../../../App'
+import { projectRoutes as project } from '../../../router'
+import './Day-1.scss'
 
 const images = [
     {
@@ -28,14 +29,23 @@ const images = [
         name: 'Mountains - Clouds',
         link: 'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     },
-];
+]
 
 function Day1() {
-    const [active, setActive] = useState(images[0].id);
+    const titleDoc = useContext(TitleContext)
+
+    useEffect(() => {
+        document.title = `${project[0].day} - ${project[0].name}`
+        return () => {
+            document.title = titleDoc
+        }
+    }, [])
+
+    const [active, setActive] = useState(images[0].id)
 
     const handleClick = (index) => {
-        setActive(index + 1);
-    };
+        setActive(index + 1)
+    }
     return (
         <div className="Day1">
             <div className="Day1__wrap">
@@ -51,7 +61,7 @@ function Day1() {
                 ))}
             </div>
         </div>
-    );
+    )
 }
 
-export default Day1;
+export default Day1

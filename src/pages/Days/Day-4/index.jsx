@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { TitleContext } from '../../../App'
+import { projectRoutes as project } from '../../../router'
+
 import './Day-4.scss'
 
 function Day4() {
@@ -7,6 +10,16 @@ function Day4() {
     const handleClick = () => {
         setClick(!click)
     }
+
+    const titleDoc = useContext(TitleContext)
+
+    useEffect(() => {
+        document.title = `${project[3].day} - ${project[3].name}`
+        return () => {
+            document.title = titleDoc
+        }
+    }, [])
+
     return (
         <div className="Day4">
             <div className={`search ${click && 'active'}`}>

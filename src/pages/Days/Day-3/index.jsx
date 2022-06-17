@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { TitleContext } from '../../../App'
+import { projectRoutes as project } from '../../../router'
+
 import styles from './Day-3.module.scss'
 
 const img =
@@ -8,6 +11,16 @@ function Day3() {
 
     const isRotate = rotate && styles.rotate
     const isSlideIn = rotate && styles.slideIn
+
+    const titleDoc = useContext(TitleContext)
+
+    useEffect(() => {
+        document.title = `${project[2].day} - ${project[2].name}`
+        return () => {
+            document.title = titleDoc
+        }
+    }, [])
+
     return (
         <div className={styles.bg}>
             <div className={styles.btnsWrap}>
