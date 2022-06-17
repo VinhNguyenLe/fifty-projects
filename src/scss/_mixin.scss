@@ -13,3 +13,9 @@
     outline: $outline;
     border: $border;
 }
+
+@mixin view1024 {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
