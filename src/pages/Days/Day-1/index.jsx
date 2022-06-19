@@ -1,6 +1,4 @@
 import { useState, useEffect, useContext } from 'react'
-import { TitleContext } from '../../../App'
-import { projectRoutes as project } from '../../../router'
 import './Day-1.scss'
 
 const images = [
@@ -37,7 +35,7 @@ function Day1({ docTitle, depCom }) {
         return () => {
             document.title = `50 Projects In 50 Days Challenge`
         }
-    }, [depCom])
+    }, [docTitle])
 
     const [active, setActive] = useState(images[0].id)
 

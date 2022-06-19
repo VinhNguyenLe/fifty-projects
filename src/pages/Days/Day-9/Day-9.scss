@@ -1,0 +1,24 @@
+@use '../../../scss/' as *;
+.Day9 {
+    @include widthHeight;
+    @include flex;
+    flex-direction: column;
+    background-color: #a164df;
+
+    & .btns {
+        @include flex;
+        flex-wrap: wrap;
+    }
+
+    & button {
+        font-size: 28px;
+        outline: none;
+        border: none;
+        padding: 24px 48px;
+        margin: 16px;
+        cursor: pointer;
+        color: #fff;
+        background-color: #663399;
+        border-radius: 4px;
+    }
+}
