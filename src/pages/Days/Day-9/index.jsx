@@ -1,7 +1,7 @@
 import React from 'react'
 
-function index() {
-    return <div>index</div>
+function Day9() {
+    return <div>Day9</div>
 }
 
-export default index
+export default Day9
