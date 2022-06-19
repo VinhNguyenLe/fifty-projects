@@ -1,0 +1,40 @@
+@use '../../../scss' as *;
+
+.Day6 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 80px;
+    overflow-x: hidden;
+    & h1 {
+        margin-block: 24px;
+    }
+
+    & .boxes {
+        @include flex(center, center);
+        flex-direction: column;
+
+        & .box {
+            width: 320px;
+            height: 180px;
+            line-height: 180px;
+            font-size: 28px;
+            margin: 12px;
+            border-radius: 18px;
+            background-color: #663399;
+            color: #fff;
+            font-weight: 500;
+            cursor: default;
+            box-shadow: -1px 8px 13px 1px #ccc;
+            transform: translateX(400%);
+            transition: transform 0.5s ease;
+            &:nth-of-type(even) {
+                transform: translateX(-400%);
+            }
+
+            &.show {
+                transform: translateX(0);
+            }
+        }
+    }
+}
