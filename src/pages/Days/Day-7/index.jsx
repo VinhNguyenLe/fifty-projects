@@ -1,4 +1,3 @@
-import React from 'react'
 import './Day-7.scss'
 
 function Day7() {
