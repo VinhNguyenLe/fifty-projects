@@ -1,0 +1,44 @@
+@use '../../../scss/' as *;
+
+.Day10 {
+    @include flex;
+    @include widthHeight;
+    background-color: #686de0;
+
+    & .container {
+        background-color: #fff;
+        width: 100%;
+        max-width: 800px;
+        padding: 40px;
+        border-radius: 12px;
+        text-align: center;
+
+        & h3 {
+            color: #999;
+            font-weight: 500;
+        }
+
+        & h1 {
+            max-width: 600px;
+            font-weight: 500;
+            width: 100%;
+            margin: 40px auto;
+        }
+
+        & button {
+            background-color: #9f68e0;
+            color: #fff;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgb(0 0 0 / 10%), 0 6px 6px rgb(0 0 0 / 10%);
+            padding: 14px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
