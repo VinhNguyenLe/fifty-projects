@@ -38,12 +38,9 @@ function Day12({ docTitle, depCom }) {
         }
     }, [depCom])
 
-    const [btn, setBtn] = useState(false)
     const [faqs, setfaqs] = useState(FAQ)
     console.log(faqs)
-    const handleToggleBtn = (index) => {
-        // setBtn(!btn)
-    }
+
     const toggleBtn = (index) => {
         setfaqs(
             faqs.map((faq, i) => {
