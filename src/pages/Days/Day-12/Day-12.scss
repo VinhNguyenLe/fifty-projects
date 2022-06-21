@@ -1,0 +1,97 @@
+@use '../../../scss/' as *;
+
+.Day12 {
+    background-color: #f0f0f0;
+    min-height: calc(100vh - 50px);
+    height: 100%;
+    padding-bottom: 80px;
+    @include flex(center, flex-start);
+
+    .faq {
+        & h1 {
+            text-align: center;
+            font-weight: 500;
+            padding-block: 24px;
+        }
+    }
+
+    & .items {
+        min-width: 620px;
+        width: 100%;
+    }
+
+    & .item {
+        width: 100%;
+        padding: 32px;
+        @include flex(space-between, flex-start);
+        background-color: #f0f0f0;
+        border: 1px solid #9fa4a8;
+        border-radius: 8px;
+        margin-block: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        & .item__content {
+            margin-right: 24px;
+
+            & h3 {
+                font-size: 19px;
+                line-height: 19px;
+                font-weight: 500;
+            }
+
+            & p {
+                opacity: 0;
+                height: 0;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+        }
+
+        & .item__btn {
+            cursor: pointer;
+
+            & i {
+                color: #9fa4a8;
+                font-size: 24px;
+            }
+        }
+
+        &.active {
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+            & .item__content {
+                & p {
+                    opacity: 1;
+                    height: 22px;
+                    margin-top: 24px;
+                    display: block;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        &.active::before,
+        &.active::after {
+            content: '\f075';
+            font-family: 'Font Awesome 5 Free';
+            color: #2ecc71;
+            font-size: 7rem;
+            position: absolute;
+            transition: all 0.3s ease;
+            opacity: 0.2;
+            top: 20px;
+            left: 20px;
+            z-index: 0;
+        }
+
+        &.active::before {
+            color: #3498db;
+            top: -10px;
+            left: -30px;
+            transform: rotateY(180deg);
+        }
+    }
+}
