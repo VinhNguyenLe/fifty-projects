@@ -1,13 +1,9 @@
-import { useState, useEffect, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 import './Day-2.scss'
 
 function Day2({ docTitle, depCom }) {
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [depCom])
+    useDocumentTitle2(docTitle, depCom)
 
     const [progress, setProgress] = useState(0)
     const [width, setWidth] = useState(0)

@@ -1,14 +1,8 @@
-import { useEffect } from 'react'
-
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 import './Day-8.scss'
 
 function Day8({ docTitle, depCom }) {
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [depCom])
+    useDocumentTitle2(docTitle, depCom)
 
     const inputLabel = {
         email: 'Email',

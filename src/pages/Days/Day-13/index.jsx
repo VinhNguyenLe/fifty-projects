@@ -1,7 +1,10 @@
 import React from 'react'
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 
-function index() {
-    return <div>index</div>
+function Day13({ docTitle, depCom }) {
+    useDocumentTitle2(docTitle, depCom)
+
+    return <div>Day13</div>
 }
 
-export default index
+export default Day13

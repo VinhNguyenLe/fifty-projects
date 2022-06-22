@@ -1,15 +1,9 @@
-import { useEffect } from 'react'
 import { soundURLs } from './sounds'
-
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 import './Day-9.scss'
 
 function Day9({ docTitle, depCom }) {
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [depCom])
+    useDocumentTitle2(docTitle, depCom)
 
     const handleClick = (index) => {
         const audios = document.querySelectorAll('audio')

@@ -18,7 +18,7 @@ export const projectRoutes = [
     { path: '/day-10-dad-jokes', component: Days.Day10, name: 'Dad Jokes', day: 'Day 10' },
     { path: '/day-11-event-keycodes', component: Days.Day11, name: 'Event KeyCodes', day: 'Day 11' },
     { path: '/day-12-faq-collapse', component: Days.Day12, name: 'FAQ Collapse', day: 'Day 12' },
-    { path: '/day-13', component: Days.Day2, name: 'Name', day: 'Day 13' },
+    { path: '/day-13-random-choice-picker', component: Days.Day13, name: 'Random Choice Picker', day: 'Day 13' },
     { path: '/day-14', component: Days.Day2, name: 'Name', day: 'Day 14' },
     { path: '/day-15', component: Days.Day2, name: 'Name', day: 'Day 15' },
     { path: '/day-16', component: Days.Day2, name: 'Name', day: 'Day 16' },

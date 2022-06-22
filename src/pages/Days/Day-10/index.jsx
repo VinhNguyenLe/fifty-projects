@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react'
-
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 import './Day-10.scss'
 
 function Day10({ docTitle, depCom }) {
     const apiURL = 'https://icanhazdadjoke.com'
 
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [depCom])
+    useDocumentTitle2(docTitle, depCom)
 
     const [joke, setJoke] = useState('Click the button to get joke')
     console.log('Log ~ joke', joke)

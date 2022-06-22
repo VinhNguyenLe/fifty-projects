@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState } from 'react'
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 import './Day-1.scss'
 
 const images = [
@@ -30,12 +31,7 @@ const images = [
 ]
 
 function Day1({ docTitle, depCom }) {
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [docTitle])
+    useDocumentTitle2(docTitle, depCom)
 
     const [active, setActive] = useState(images[0].id)
 

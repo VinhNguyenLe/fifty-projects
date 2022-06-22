@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react'
-
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 import './Day-5.scss'
 
 function Day5({ docTitle, depCom }) {
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [depCom])
+    useDocumentTitle2(docTitle, depCom)
 
     const [percent, setPercent] = useState(1)
 

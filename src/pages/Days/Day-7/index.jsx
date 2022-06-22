@@ -1,13 +1,8 @@
 import './Day-7.scss'
-import { useEffect } from 'react'
+import useDocumentTitle2 from '../../../useDocumentTitle2'
 
 function Day7({ docTitle, depCom }) {
-    useEffect(() => {
-        document.title = `${docTitle}`
-        return () => {
-            document.title = `50 Projects In 50 Days Challenge`
-        }
-    }, [depCom])
+    useDocumentTitle2(docTitle, depCom)
     return (
         <div className="Day7">
             <div className="split left">
